@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "apmaks-7f90"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "apmaks-7f90"
+  template:
+    metadata:
+      labels:
+        app: "apmaks-7f90"
+    spec:
+      containers:
+        - name: "apmaks-7f90"
+          image: "apmaksregistry.azurecr.io/apmaks"
+          ports:
+          - containerPort: 5000
