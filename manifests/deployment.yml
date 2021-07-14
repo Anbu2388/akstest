@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksapmcluster-5ed4"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksapmcluster-5ed4"
+  template:
+    metadata:
+      labels:
+        app: "aksapmcluster-5ed4"
+    spec:
+      containers:
+        - name: "aksapmcluster-5ed4"
+          image: "apmtestregistry.azurecr.io/aksapmcluster"
+          ports:
+          - containerPort: 5000
